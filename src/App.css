@@ -1,6 +1,6 @@
 .App {
-  background: linear-gradient(rgb(90, 100, 133), rgb(26, 58, 160));
-  height: 100vh;
+  background: linear-gradient(rgb(117, 144, 235), rgb(152, 153, 158));
+  height: 100%;
   width: 100%;
   padding: 15px;
 }
@@ -22,18 +22,22 @@
 }
 
 .App input {
-  background-color: #333;
+  background-color: rgb(91, 88, 138);
   flex: 1;
 }
 
+.App input:focus, textarea:focus {
+  outline: none;
+}
+
 .App button {
-  background-color: hsl(226, 72%, 36%);
+  background-color: hsl(350, 72%, 36%);
   color: #fff;
   transition: .2s ease-in-out;
 }
 
 .App button:hover {
-  background-color: hsl(226, 72%, 26%);
+  background-color: hsl(332, 71%, 26%);
 }
 
 .App main {
@@ -98,4 +102,26 @@
 .forecast ol li div svg {
   font-size: 18px;
   margin-right: 8px;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: Montserrat;
+  font-size: 20px;
+  
+  background-color: red;
+  background-image: linear-gradient(45deg, red, white);
+  background-size: 100%;
+  background-repeat: repeat;
+  background-clip: text;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+
+  margin-bottom: 10px;
 }

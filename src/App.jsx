@@ -14,7 +14,6 @@ const App = () => {
     setCity(search);
     const response = await api.get(search)
     localStorage.setItem("Place", JSON.stringify(response));
-    console.log(response)
     setWeather(response.data);
   }
 
@@ -26,9 +25,16 @@ const App = () => {
     }
   }, []);
 
+  const showData = JSON.parse(localStorage.getItem("Place"));
+  const showCity = showData.config.url;
+  const transformCity = showCity.split(" ");
+  
+  for (let i = 0; i < transformCity.length; i++) transformCity[i] = transformCity[i].charAt(0).toUpperCase() + transformCity[i].slice(1);
+  const formattedCity = transformCity.join(" ");
+
   return (
     <div className="App">
-      <h3>Weather App</h3>
+      <h3 className="title">Weather App</h3>
 
       <header>
         <form onSubmit={handleGetWeather}>
@@ -39,7 +45,7 @@ const App = () => {
 
       {weather && 
         <main>
-          <h1>{city}</h1>
+          <h1>{formattedCity}</h1>
 
           <section className="current-weather">
             <h2>Current weather</h2>
@@ -53,14 +59,14 @@ const App = () => {
               <ol>
               {
                 weather.forecast.map(day =>
-                  <li key={day.day}>
+                  <li key={day.day}> 
                     <div>
                       <FaTemperatureHigh />
-                      <p>{day.temperature.split('+')}</p>
+                      <p>{isNaN(parseInt(day.temperature.split(' °C'))) ? 'unknown' : day.temperature.split('+')}</p>
                     </div>
                     <div>
                       <FaWind />
-                      <p>{day.wind}</p>
+                      <p>{isNaN(parseInt(day.wind.split(' km/h'))) ? 'unknown' : day.wind}</p>
                     </div>
                   </li>
                 )
