@@ -4,3 +4,6 @@ dist
 dist-ssr
 *.local
 commands.txt
+.firebase
+.firebaserc
+firebase.json

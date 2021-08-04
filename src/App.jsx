@@ -25,12 +25,14 @@ const App = () => {
     }
   }, []);
 
-  const showData = JSON.parse(localStorage.getItem("Place"));
-  const showCity = showData.config.url;
-  const transformCity = showCity.split(" ");
-  
-  for (let i = 0; i < transformCity.length; i++) transformCity[i] = transformCity[i].charAt(0).toUpperCase() + transformCity[i].slice(1);
-  const formattedCity = transformCity.join(" ");
+  let showData;
+  localStorage.getItem("Place") ? showData = JSON.parse(localStorage.getItem("Place")) : '';
+
+  const showCity = showData?.config.url;
+  const transformCity = showCity?.split(" ");
+    
+  for (let i = 0; i < transformCity?.length; i++) transformCity[i] = transformCity[i].charAt(0).toUpperCase() + transformCity[i].slice(1);
+  const formattedCity = transformCity?.join(" ");
 
   return (
     <div className="App">
