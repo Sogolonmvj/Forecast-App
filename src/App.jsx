@@ -25,8 +25,7 @@ const App = () => {
     }
   }, []);
 
-  let showData;
-  localStorage.getItem("Place") ? showData = JSON.parse(localStorage.getItem("Place")) : '';
+  const showData = JSON.parse(localStorage.getItem("Place"));
 
   const showCity = showData?.config.url;
   const transformCity = showCity?.split(" ");
