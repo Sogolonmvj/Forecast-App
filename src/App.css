@@ -1,6 +1,11 @@
+:root {
+  --time: 1s ease 0.25s,
+  color 1.25s ease 0s;
+}
+
 .App {
   background: linear-gradient(rgb(117, 144, 235), rgb(152, 153, 158));
-  height: 100%;
+  min-height: 100vh;
   width: 100%;
   padding: 15px;
 }
@@ -38,6 +43,10 @@
 
 .App button:hover {
   background-color: hsl(332, 71%, 26%);
+
+  transition: var(--time);
+
+  cursor: pointer;
 }
 
 .App main {
@@ -111,7 +120,29 @@
 
   font-family: Montserrat;
   font-size: 20px;
-  
+
+  margin-bottom: 10px;
+}
+
+.copyright {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: center;
+}
+
+.contact {
+  text-decoration: none;
+}
+
+.contact:hover {
+  background-color: hsl(332, 71%, 26%);
+  background-image: none;
+
+  transition: var(--time);
+}
+
+.gradient {
   background-color: red;
   background-image: linear-gradient(45deg, red, white);
   background-size: 100%;
@@ -122,6 +153,19 @@
   -webkit-text-fill-color: transparent;
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
+}
 
-  margin-bottom: 10px;
+.go-up {
+  transform: translateY(-5vh);
+}
+
+.lastdiv {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: center;
+  
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }

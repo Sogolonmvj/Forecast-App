@@ -35,7 +35,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <h3 className="title">Weather App</h3>
+      <h3 className="title gradient">Weather App</h3>
 
       <header>
         <form onSubmit={handleGetWeather}>
@@ -76,6 +76,9 @@ const App = () => {
           </section>
         </main>
       }
+      <div className="lastdiv">
+        <p className='copyright go-up'><a href='mailto:sogolonmvj@yahoo.com' className='contact gradient'>sogolonmvj@yahoo.com</a>.&nbsp;Developed by Sogolon.</p>
+      </div>
     </div>
   )
 
