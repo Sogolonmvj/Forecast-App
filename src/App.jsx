@@ -17,6 +17,19 @@ const App = () => {
     setWeather(response.data);
   }
 
+  const treatData = (e) => {
+    e.preventDefault();
+
+    if(search.match(/^[a-zA-ZáàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ -]+$/)) {
+      handleGetWeather(e);
+    } else if (search === undefined) {
+      return null;
+    } else {
+      return null;
+    }
+          
+  }
+
   useEffect(() => {
     const cachedData = JSON.parse(localStorage.getItem("Place"));
     if (cachedData && !weather) {
@@ -38,9 +51,9 @@ const App = () => {
       <h3 className="title gradient">Weather App</h3>
 
       <header>
-        <form onSubmit={handleGetWeather}>
-          <input type="text" id="place" value={search} onChange={(e) => setSearch(e.target.value)} />
-          <button onClick={handleGetWeather}>Search</button>
+        <form onSubmit={treatData}>
+          <input type="text" id="place" placeholder="Enter a city here!" value={search} onChange={(e) => setSearch(e.target.value)} />
+          <button onClick={treatData}>Search</button>
         </form>
       </header>
 

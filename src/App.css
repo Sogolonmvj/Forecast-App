@@ -19,6 +19,7 @@
   align-items: center;
   padding: 8px 12px;
   height: 36px;
+  font-size: 16px;
 }
 
 .App header form {
@@ -29,6 +30,12 @@
 .App input {
   background-color: rgb(91, 88, 138);
   flex: 1;
+}
+
+.App input::placeholder {
+  color: white;
+
+  font-size: 16px;
 }
 
 .App input:focus, textarea:focus {
