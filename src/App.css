@@ -176,3 +176,20 @@
   bottom: 0;
   width: 100%;
 }
+
+@media (max-width: 425px) {
+  .copyright {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+@media (max-width: 1024px) {
+  .move {
+    transform: translateY(-15vh);
+  }
+
+  .up {
+    transform: translateY(-8vh);
+  }
+}

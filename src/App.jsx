@@ -61,14 +61,14 @@ const App = () => {
         <main>
           <h1>{formattedCity}</h1>
 
-          <section className="current-weather">
+          <section className="current-weather up">
             <h2>Current weather</h2>
 
             <p>{weather.temperature.split('+')}</p>
             <p>{weather.description}</p>
           </section>
 
-          <section className="forecast">
+          <section className="forecast move">
               <h2>Forecast</h2>
               <ol>
               {
@@ -90,7 +90,7 @@ const App = () => {
         </main>
       }
       <div className="lastdiv">
-        <p className='copyright go-up'><a href='mailto:sogolonmvj@yahoo.com' className='contact gradient'>sogolonmvj@yahoo.com</a>.&nbsp;Developed by Sogolon.</p>
+        <p className='copyright go-up'><a href='mailto:sogolonmvj@yahoo.com' className='contact gradient'>sogolonmvj@yahoo.com.</a>&nbsp;Developed by Sogolon.</p>
       </div>
     </div>
   )
